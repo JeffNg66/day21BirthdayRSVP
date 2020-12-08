@@ -1,0 +1,15 @@
+ng add @angular/material
+
+ng g c /components/add-rsvp --module=app.module --flat --skipTests
+
+ng g c /components/rsvp --module=app.module --flat --skipTests
+
+npm i @angular/flex-layout
+
+npm i @angular/material-moment-adapter
+
+npm i moment
+
+----------------------
+
+apiUrl: 'http://localhost:3000/api/rsvps'   // set in environment.ts & import in birthday.service.ts

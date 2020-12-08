@@ -1,0 +1,9 @@
+<mat-nav-list>
+    <a mat-list-item *ngFor="let c of rsvps" [routerLink]="['editRsvp', c.id]">
+      <h4 mat-line>{{ c.name }}</h4>
+      <p mat-line>&nbsp;{{ c.email }}</p>
+      <p mat-line>&nbsp;{{ c.phone }}</p>
+      <p mat-line>&nbsp;{{ c.status }}</p>
+      <mat-divider></mat-divider>
+    </a>
+  </mat-nav-list>

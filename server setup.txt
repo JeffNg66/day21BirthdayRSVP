@@ -1,0 +1,17 @@
+npm init
+
+npm i express body-parser secure-env cors mysql2 --save
+
+npx secure-env -s isasecret  // encrypt .env to .env.enc
+
+rs  // to reset nodemon
+
+------------------------------------
+
+MYSQL
+Schemas - birthday
+Tables - rsvp
+
+see MYSQL.txt for setup of database
+
+

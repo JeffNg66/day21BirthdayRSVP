@@ -1,0 +1,44 @@
+create database birthday default character set utf8;
+
+use birthday;
+
+create table rsvp (
+	id int not null auto_increment,
+    name char(40) NOT NULL,
+    email char(60) NOT NULL,
+    phone char(10) NOT NULL,
+    status ENUM('Count me in!', 'Next time'),
+    UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+    primary key (id)
+);
+
+drop table rsvp;   // to delete table
+
+alter table birthday.rsvp
+add column createdBy int not null,
+add column createdDt datetime not null,
+add column updatedBy int,
+add column updatedDt datetime;
+
+insert into rsvp (name, email, phone, status, createdBy, createdDt)
+values ('Jeff Ng', 'jeff-ng@hotmail.com', '81688999', 'Count me in!', 1, '2020-12-07');
+
+select * from rsvp;
+
+select count(*) as count_rsvp from rsvp;
+
+truncate table rsvp;   //  remove all records in table
+
+insert into rsvp (name, email, phone, status, createdBy, createdDt)
+values ('Thomas Tan', 'ttan@hotmail.com', '98765432', 'Count me in!', 1, '2020-12-07');
+
+insert into rsvp (name, email, phone, status, createdBy, createdDt)
+values ('Mary Tan', 'mtan@hotmail.com', '98765432', 'Count me in!', 1, curdate());
+
+update rsvp set name='Thomas Tan' where id='3';
+
+select distinct(name) from rsvp;
+
+select name, count(name) as occurence from rsvp
+group by name
+having count(name) > 1;

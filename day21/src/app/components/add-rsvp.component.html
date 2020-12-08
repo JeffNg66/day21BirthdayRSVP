@@ -1,0 +1,36 @@
+<section class="mat-title mat-typography">
+    <h2 class="mat-h2">&nbsp;&nbsp;Add Rsvp</h2>
+  </section>
+  <mat-card>
+    <div class="example-container">
+      <form class="example-container" [formGroup]="rsvpForm">
+        <mat-form-field>
+          <input matInput placeholder="Name" formControlName="name" required />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" required />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Phone" formControlName="phone" required />
+        </mat-form-field>
+        <div>
+            <label>Status: </label>
+            <mat-radio-group arial-label="Select an option" formControlName="status">
+                <mat-radio-button *ngFor="let p of statuses" value="{{p}}">{{p}} &nbsp;</mat-radio-button>
+            </mat-radio-group>
+            <!-- <div *ngIf="form.get('priority').invalid && (form.get('priority').dirty || form.get('priority').touched)">
+                <mat-error *ngIf="form.get('priority').invalid">{{getPriorityErrorMessage()}}</mat-error>
+            </div> -->
+        </div>
+        <br>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="saveRsvp()"
+          [disabled]="!rsvpForm.valid"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </mat-card>
