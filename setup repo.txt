@@ -1,0 +1,14 @@
+create new repo in github
+
+------------
+change directory
+remove .git folder in angular directory
+
+in CLI
+
+- git init
+- git add .
+- git remote add origin https://github.com/JeffNg66/day21BirthdayRSVP.git
+- git remote -v
+- git commit -m "first commit"
+- git push origin main
